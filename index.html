@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="La Notte — Restaurante de Alta Cocina Italiana. Reservaciones, menú y galería."/>
+  <title>La Notte — Restaurante de Alta Cocina</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+  <!-- ── MENÚ MÓVIL ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre-nosotros">Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#galeria">Galería</a>
+    <a href="#reservas">Reservar</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <!-- ── NAVEGACIÓN ── -->
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">La Notte</a>
+    <ul class="nav-links">
+      <li><a href="#sobre-nosotros">Nosotros</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#reservas">Reservar</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#reservas" class="nav-reserve">Reservar mesa</a>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Bienvenidos a</p>
+      <h1>La Notte</h1>
+      <p class="hero-tagline">Alta Cocina Italiana · Desde 1998</p>
+      <p class="hero-sub">Una experiencia gastronómica única en el corazón de la ciudad</p>
+      <div class="hero-ctas">
+        <a href="#reservas" class="btn-gold">Reservar mesa</a>
+        <a href="#menu" class="btn-ghost">Ver el menú</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── SOBRE NOSOTROS ── -->
+  <section class="section about-section" id="sobre-nosotros">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <div class="about-img-placeholder">🍷</div>
+          <div class="about-img-accent">🕯️</div>
+        </div>
+        <div class="about-text-block reveal">
+          <p class="section-eyebrow" style="text-align:left;">Nuestra historia</p>
+          <h2>Una pasión por la <em>cocina auténtica</em></h2>
+          <p>En La Notte, cada plato es una obra de arte. Nuestro chef ejecutivo,
+          formado en las mejores escuelas culinarias de Milán y Roma, trae a tu mesa
+          los sabores más auténticos de Italia, usando ingredientes importados
+          directamente de sus regiones de origen.</p>
+          <p>Más que un restaurante, somos un destino. Un lugar donde el tiempo se
+          detiene y cada momento se convierte en un recuerdo que atesorarás para siempre.</p>
+          <div class="about-stats">
+            <div>
+              <span class="stat-num">26</span>
+              <span class="stat-label">Años de experiencia</span>
+            </div>
+            <div>
+              <span class="stat-num">48</span>
+              <span class="stat-label">Platos en el menú</span>
+            </div>
+            <div>
+              <span class="stat-num">★ 4.9</span>
+              <span class="stat-label">Calificación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MENÚ ── -->
+  <section class="section menu-section" id="menu">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Nuestra carta</p>
+      <h2 class="section-title reveal">El Menú</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+
+      <!-- Pestañas del menú -->
+      <div class="menu-tabs reveal" id="menuTabs">
+        <button class="menu-tab active" data-tab="entradas">Entradas</button>
+        <button class="menu-tab" data-tab="pastas">Pastas</button>
+        <button class="menu-tab" data-tab="principales">Principales</button>
+        <button class="menu-tab" data-tab="postres">Postres</button>
+        <button class="menu-tab" data-tab="vinos">Vinos</button>
+      </div>
+
+      <!-- ENTRADAS -->
+      <div class="menu-panel active" id="tab-entradas">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <span class="menu-item-icon">🧀</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Burrata Pugliese</span>
+                <span class="menu-item-price">$14</span>
+              </div>
+              <p class="menu-item-desc">Burrata fresca con tomate heirloom, albahaca y aceite de oliva extra virgen.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🦑</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Calamari Fritti <span class="menu-badge">Chef</span></span>
+                <span class="menu-item-price">$16</span>
+              </div>
+              <p class="menu-item-desc">Calamares a la romana con salsa marinara casera y limón de Sicilia.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍖</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Prosciutto e Melone</span>
+                <span class="menu-item-price">$18</span>
+              </div>
+              <p class="menu-item-desc">Jamón San Daniele 24 meses con melón cantaloupe y rúcula baby.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🫒</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Bruschetta al Tartufo</span>
+                <span class="menu-item-price">$22</span>
+              </div>
+              <p class="menu-item-desc">Pan toscano tostado con crema de trufa negra y parmesano Reggiano.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASTAS -->
+      <div class="menu-panel" id="tab-pastas">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <span class="menu-item-icon">🍝</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Spaghetti Carbonara <span class="menu-badge">Clásico</span></span>
+                <span class="menu-item-price">$24</span>
+              </div>
+              <p class="menu-item-desc">Receta romana tradicional: guanciale, huevo, pecorino y pimienta negra.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍄</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Tagliatelle ai Funghi</span>
+                <span class="menu-item-price">$27</span>
+              </div>
+              <p class="menu-item-desc">Pasta fresca con mezcla de hongos porcini, trompeta y trufa de temporada.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🦞</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Linguine all'Aragosta <span class="menu-badge">Chef</span></span>
+                <span class="menu-item-price">$42</span>
+              </div>
+              <p class="menu-item-desc">Linguine con langosta fresca, cherry confitado, vino blanco y guindilla.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🧅</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Gnocchi al Gorgonzola</span>
+                <span class="menu-item-price">$22</span>
+              </div>
+              <p class="menu-item-desc">Ñoquis de papa artesanales con salsa de gorgonzola, nuez y pera caramelizada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRINCIPALES -->
+      <div class="menu-panel" id="tab-principales">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <span class="menu-item-icon">🥩</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Bistecca Fiorentina <span class="menu-badge">Estrella</span></span>
+                <span class="menu-item-price">$65</span>
+              </div>
+              <p class="menu-item-desc">T-Bone de res angus 1.2kg a la brasa, con sal Maldon y aceite de oliva virgen.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🐟</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Branzino al Forno</span>
+                <span class="menu-item-price">$38</span>
+              </div>
+              <p class="menu-item-desc">Lubina al horno con alcaparras, aceitunas de Taggia y limón de Amalfi.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍗</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Pollo alla Milanese</span>
+                <span class="menu-item-price">$28</span>
+              </div>
+              <p class="menu-item-desc">Pechuga empanizada crujiente con ensalada de rúcula, tomate y parmesano.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🐑</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Agnello al Rosmarino</span>
+                <span class="menu-item-price">$45</span>
+              </div>
+              <p class="menu-item-desc">Rack de cordero con costra de hierbas, jus de romero y puré de coliflor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSTRES -->
+      <div class="menu-panel" id="tab-postres">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <span class="menu-item-icon">🍮</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Tiramisú della Casa <span class="menu-badge">Firma</span></span>
+                <span class="menu-item-price">$12</span>
+              </div>
+              <p class="menu-item-desc">Receta original del chef, con café espresso, mascarpone y cacao de Ghana.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍋</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Panna Cotta al Limone</span>
+                <span class="menu-item-price">$10</span>
+              </div>
+              <p class="menu-item-desc">Crema cocida con limoncello y coulis de frambuesa fresca.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍫</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Fondente al Cioccolato</span>
+                <span class="menu-item-price">$14</span>
+              </div>
+              <p class="menu-item-desc">Coulant de chocolate 70% con centro líquido y helado de vainilla de Madagascar.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍨</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Gelato Artigianale</span>
+                <span class="menu-item-price">$9</span>
+              </div>
+              <p class="menu-item-desc">Tres bolas de gelato artesanal a elegir: pistacho, stracciatella o limón.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VINOS -->
+      <div class="menu-panel" id="tab-vinos">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <span class="menu-item-icon">🍷</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Barolo DOCG 2018 <span class="menu-badge">Premium</span></span>
+                <span class="menu-item-price">$85</span>
+              </div>
+              <p class="menu-item-desc">Nebbiolo de Piamonte. Taninos sedosos, notas de cereza, tabaco y cuero.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🥂</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Franciacorta Brut</span>
+                <span class="menu-item-price">$60</span>
+              </div>
+              <p class="menu-item-desc">Espumante italiano método clásico. Fresco y elegante, ideal para celebrar.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🍾</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Brunello di Montalcino</span>
+                <span class="menu-item-price">$120</span>
+              </div>
+              <p class="menu-item-desc">El rey de los vinos toscanos. Sangiovese puro, 5 años de crianza. Espectacular.</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item-icon">🫗</span>
+            <div class="menu-item-body">
+              <div class="menu-item-header">
+                <span class="menu-item-name">Pinot Grigio DOC 2022</span>
+                <span class="menu-item-price">$42</span>
+              </div>
+              <p class="menu-item-desc">Blanco del Alto Adigio. Aromas florales, fresco y mineral. Perfecto con pescados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GALERÍA ── -->
+  <section class="gallery-section" id="galeria">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Nuestra atmósfera</p>
+      <h2 class="section-title reveal">Galería</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80&auto=format" alt="Interior del restaurante" loading="lazy"/>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80&auto=format" alt="Pasta artesanal" loading="lazy"/>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80&auto=format" alt="Pizza napolitana" loading="lazy"/>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80&auto=format" alt="Equipo" loading="lazy"/>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80&auto=format" alt="Postre" loading="lazy"/>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIOS ── -->
+  <section class="section testimonios-section" id="testimonios">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Lo que dicen</p>
+      <h2 class="section-title reveal">Nuestros comensales</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio-card reveal">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-text">La pasta más increíble que he probado fuera de Italia. El ambiente es íntimo y romántico. Definitivamente el mejor restaurante de la ciudad.</p>
+          <div class="testimonio-author"><strong>Valentina Moretti</strong> Cliente frecuente · Ciudad de México</div>
+        </div>
+        <div class="testimonio-card reveal">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-text">Celebramos nuestro aniversario aquí y fue perfecto. El servicio impecable, el vino excepcional y la Bistecca Fiorentina, simplemente perfecta.</p>
+          <div class="testimonio-author"><strong>Carlos &amp; Andrea López</strong> Aniversario · Guadalajara</div>
+        </div>
+        <div class="testimonio-card reveal">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-text">El tiramisú de la casa es un pecado de los buenos. Vine por negocios y terminé reservando mesa para el fin de semana con mi familia entera.</p>
+          <div class="testimonio-author"><strong>Roberto Fernández</strong> Viajero de negocios · Monterrey</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESERVAS ── -->
+  <section class="section reservas-section" id="reservas">
+    <div class="reservas-inner">
+      <p class="section-eyebrow reveal">Haz tu reservación</p>
+      <h2 class="section-title reveal">Reservar mesa</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="reservas-form reveal">
+        <div id="formContent">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Tu nombre" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" placeholder="tu@email.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" placeholder="+502 0000-0000"/>
+            </div>
+            <div class="form-group">
+              <label for="personas">Número de personas</label>
+              <select id="personas">
+                <option>1 persona</option>
+                <option selected>2 personas</option>
+                <option>3 personas</option>
+                <option>4 personas</option>
+                <option>5-6 personas</option>
+                <option>7 o más personas</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha"/>
+            </div>
+            <div class="form-group">
+              <label for="hora">Hora preferida</label>
+              <select id="hora">
+                <option>13:00 — Almuerzo</option>
+                <option>14:00 — Almuerzo</option>
+                <option>19:00 — Cena</option>
+                <option>20:00 — Cena</option>
+                <option selected>20:30 — Cena</option>
+                <option>21:00 — Cena</option>
+                <option>21:30 — Cena</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notas">Peticiones especiales</label>
+            <textarea id="notas" placeholder="Alergias, ocasión especial, preferencias de mesa…"></textarea>
+          </div>
+          <div id="reservaError"></div>
+          <button type="button" class="form-submit" id="btnReserva">Confirmar reservación</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="check">✦</div>
+          <p>¡Reservación confirmada!</p>
+          <p class="form-success-sub">Te enviaremos los detalles a tu correo. ¡Te esperamos!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INFORMACIÓN / CONTACTO ── -->
+  <section class="section info-section" id="contacto">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Encuéntranos</p>
+      <h2 class="section-title reveal">Información</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="info-grid">
+        <div class="info-block reveal">
+          <div class="info-icon">📍</div>
+          <h3>Ubicación</h3>
+          <p>Av. de la Reforma 125<br/>Zona Rosa, Ciudad de Guatemala<br/>Guatemala, C.A.</p>
+        </div>
+        <div class="info-block reveal">
+          <div class="info-icon">🕯️</div>
+          <h3>Horarios</h3>
+          <p>Lun – Vie: 12:30 – 23:00<br/>Sábado: 12:00 – 23:30<br/>Domingo: 12:00 – 22:00</p>
+        </div>
+        <div class="info-block reveal">
+          <div class="info-icon">📞</div>
+          <h3>Contacto</h3>
+          <p>
+            <a href="tel:+50222000000">+502 2200-0000</a><br/>
+            <a href="mailto:reservas@lanotte.com">reservas@lanotte.com</a><br/>
+            <a href="#">Instagram · @RestauranteLaNotte</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">La Notte</div>
+    <ul class="footer-links">
+      <li><a href="#sobre-nosotros">Nosotros</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#reservas">Reservas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <p>© 2026 La Notte Ristorante · Todos los derechos reservados</p>
+    <div class="developer-badge">Desarrollado por <span>Luis Gustavo Ramírez</span> · Portafolio Freelance</div>
+  </footer>
+
+  <!-- JavaScript propio -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

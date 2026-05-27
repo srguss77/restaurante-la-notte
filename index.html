@@ -3,22 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="La Notte — Restaurante de Alta Cocina Italiana. Reservaciones, menú y galería."/>
+  <meta name="description" content="La Notte — Restaurante de Alta Cocina Italiana. Reservaciones, menú y galería en Ciudad de Guatemala."/>
   <title>La Notte — Restaurante de Alta Cocina</title>
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant"/>
+  <meta property="og:title" content="La Notte — Alta Cocina Italiana"/>
+  <meta property="og:description" content="Una experiencia gastronómica única desde 1998. Reserva tu mesa hoy."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80"/>
+  <meta property="og:locale" content="es_GT"/>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Notte",
+    "description": "Restaurante de Alta Cocina Italiana. Desde 1998.",
+    "telephone": "+502-2200-0000",
+    "email": "reservas@lanotte.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de la Reforma 125",
+      "addressLocality": "Zona Rosa, Ciudad de Guatemala",
+      "addressCountry": "GT"
+    },
+    "openingHours": ["Mo-Fr 12:30-23:00", "Sa 12:00-23:30", "Su 12:00-22:00"],
+    "servesCuisine": "Italiana",
+    "priceRange": "$$$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "847"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>"/>
+
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
 
-  <!-- Estilos propios -->
   <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 
+  <!-- ── PROGRESS BAR ── -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ── PRELOADER ── -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">La Notte</div>
+      <div class="preloader-line"></div>
+    </div>
+  </div>
+
+  <!-- ── CURSOR PERSONALIZADO ── -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <!-- ── MENÚ MÓVIL ── -->
   <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">✕</button>
     <a href="#sobre-nosotros">Nosotros</a>
+    <a href="#chef">El Chef</a>
     <a href="#menu">Menú</a>
     <a href="#galeria">Galería</a>
+    <a href="#eventos">Eventos</a>
     <a href="#reservas">Reservar</a>
     <a href="#contacto">Contacto</a>
   </div>
@@ -28,8 +83,10 @@
     <a href="#" class="nav-logo">La Notte</a>
     <ul class="nav-links">
       <li><a href="#sobre-nosotros">Nosotros</a></li>
+      <li><a href="#chef">Chef</a></li>
       <li><a href="#menu">Menú</a></li>
       <li><a href="#galeria">Galería</a></li>
+      <li><a href="#eventos">Eventos</a></li>
       <li><a href="#reservas">Reservar</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -77,16 +134,63 @@
           detiene y cada momento se convierte en un recuerdo que atesorarás para siempre.</p>
           <div class="about-stats">
             <div>
-              <span class="stat-num">26</span>
+              <span class="stat-num" data-target="26">0</span>
               <span class="stat-label">Años de experiencia</span>
             </div>
             <div>
-              <span class="stat-num">48</span>
+              <span class="stat-num" data-target="48">0</span>
               <span class="stat-label">Platos en el menú</span>
             </div>
             <div>
-              <span class="stat-num">★ 4.9</span>
+              <span class="stat-num" data-target="4.9" data-prefix="★ ">0</span>
               <span class="stat-label">Calificación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EL CHEF ── -->
+  <section class="section chef-section" id="chef">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Detrás de la cocina</p>
+      <h2 class="section-title reveal">El Chef</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="chef-grid">
+        <div class="chef-img-wrap reveal">
+          <div class="chef-img-inner">👨‍🍳</div>
+          <div class="chef-medal">
+            <span>⭐</span> Premio Michelin 2023
+          </div>
+        </div>
+        <div class="chef-bio reveal">
+          <p class="chef-eyebrow">Chef Ejecutivo</p>
+          <h3 class="chef-name">Marco Alessandro <em>Conti</em></h3>
+          <p class="chef-subtitle">Milán, Italia · 28 años de trayectoria</p>
+          <p>Marco Conti nació en el seno de una familia de cocineros en Lombardía, donde
+          aprendió desde niño que la cocina es el idioma del amor. Estudió en el
+          prestigioso Instituto Alberghiero di Stato de Milán y perfeccionó su técnica
+          en restaurantes con estrella Michelin en Roma, París y Barcelona.</p>
+          <p>En 1998 llegó a Guatemala con un sueño: crear un espacio donde la auténtica
+          cocina italiana pudiera brillar en tierra centroamericana. Hoy, 26 años después,
+          La Notte es su obra más orgullosa.</p>
+          <div class="chef-awards">
+            <div class="chef-award-item">
+              <span class="award-num">3</span>
+              <span class="award-text">Estrellas internacionales</span>
+            </div>
+            <div class="chef-award-item">
+              <span class="award-num">12</span>
+              <span class="award-text">Publicaciones gastronómicas</span>
+            </div>
+            <div class="chef-award-item">
+              <span class="award-num">5</span>
+              <span class="award-text">Libros de cocina</span>
             </div>
           </div>
         </div>
@@ -105,6 +209,14 @@
         <div class="ornament-line right"></div>
       </div>
 
+      <!-- Filtros rápidos -->
+      <div class="menu-filters reveal" id="menuFilters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="chef">👨‍🍳 Chef recomienda</button>
+        <button class="filter-btn" data-filter="vegetariano">🌿 Vegetariano</button>
+        <button class="filter-btn" data-filter="sin-gluten">✓ Sin gluten</button>
+      </div>
+
       <!-- Pestañas del menú -->
       <div class="menu-tabs reveal" id="menuTabs">
         <button class="menu-tab active" data-tab="entradas">Entradas</button>
@@ -117,7 +229,7 @@
       <!-- ENTRADAS -->
       <div class="menu-panel active" id="tab-entradas">
         <div class="menu-grid">
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano sin-gluten">
             <span class="menu-item-icon">🧀</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -125,9 +237,13 @@
                 <span class="menu-item-price">$14</span>
               </div>
               <p class="menu-item-desc">Burrata fresca con tomate heirloom, albahaca y aceite de oliva extra virgen.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="chef">
             <span class="menu-item-icon">🦑</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -135,9 +251,12 @@
                 <span class="menu-item-price">$16</span>
               </div>
               <p class="menu-item-desc">Calamares a la romana con salsa marinara casera y limón de Sicilia.</p>
+              <div class="item-tags">
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="sin-gluten">
             <span class="menu-item-icon">🍖</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -145,9 +264,12 @@
                 <span class="menu-item-price">$18</span>
               </div>
               <p class="menu-item-desc">Jamón San Daniele 24 meses con melón cantaloupe y rúcula baby.</p>
+              <div class="item-tags">
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano chef">
             <span class="menu-item-icon">🫒</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -155,6 +277,10 @@
                 <span class="menu-item-price">$22</span>
               </div>
               <p class="menu-item-desc">Pan toscano tostado con crema de trufa negra y parmesano Reggiano.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +289,7 @@
       <!-- PASTAS -->
       <div class="menu-panel" id="tab-pastas">
         <div class="menu-grid">
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="">
             <span class="menu-item-icon">🍝</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -173,7 +299,7 @@
               <p class="menu-item-desc">Receta romana tradicional: guanciale, huevo, pecorino y pimienta negra.</p>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano chef">
             <span class="menu-item-icon">🍄</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -181,9 +307,13 @@
                 <span class="menu-item-price">$27</span>
               </div>
               <p class="menu-item-desc">Pasta fresca con mezcla de hongos porcini, trompeta y trufa de temporada.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="chef">
             <span class="menu-item-icon">🦞</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -191,9 +321,12 @@
                 <span class="menu-item-price">$42</span>
               </div>
               <p class="menu-item-desc">Linguine con langosta fresca, cherry confitado, vino blanco y guindilla.</p>
+              <div class="item-tags">
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano">
             <span class="menu-item-icon">🧅</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -201,6 +334,9 @@
                 <span class="menu-item-price">$22</span>
               </div>
               <p class="menu-item-desc">Ñoquis de papa artesanales con salsa de gorgonzola, nuez y pera caramelizada.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+              </div>
             </div>
           </div>
         </div>
@@ -209,7 +345,7 @@
       <!-- PRINCIPALES -->
       <div class="menu-panel" id="tab-principales">
         <div class="menu-grid">
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="chef sin-gluten">
             <span class="menu-item-icon">🥩</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -217,9 +353,13 @@
                 <span class="menu-item-price">$65</span>
               </div>
               <p class="menu-item-desc">T-Bone de res angus 1.2kg a la brasa, con sal Maldon y aceite de oliva virgen.</p>
+              <div class="item-tags">
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="sin-gluten">
             <span class="menu-item-icon">🐟</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -227,9 +367,12 @@
                 <span class="menu-item-price">$38</span>
               </div>
               <p class="menu-item-desc">Lubina al horno con alcaparras, aceitunas de Taggia y limón de Amalfi.</p>
+              <div class="item-tags">
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="">
             <span class="menu-item-icon">🍗</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -239,7 +382,7 @@
               <p class="menu-item-desc">Pechuga empanizada crujiente con ensalada de rúcula, tomate y parmesano.</p>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="chef sin-gluten">
             <span class="menu-item-icon">🐑</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -247,6 +390,10 @@
                 <span class="menu-item-price">$45</span>
               </div>
               <p class="menu-item-desc">Rack de cordero con costra de hierbas, jus de romero y puré de coliflor.</p>
+              <div class="item-tags">
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
         </div>
@@ -255,7 +402,7 @@
       <!-- POSTRES -->
       <div class="menu-panel" id="tab-postres">
         <div class="menu-grid">
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="chef vegetariano">
             <span class="menu-item-icon">🍮</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -263,9 +410,13 @@
                 <span class="menu-item-price">$12</span>
               </div>
               <p class="menu-item-desc">Receta original del chef, con café espresso, mascarpone y cacao de Ghana.</p>
+              <div class="item-tags">
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano sin-gluten">
             <span class="menu-item-icon">🍋</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -273,9 +424,13 @@
                 <span class="menu-item-price">$10</span>
               </div>
               <p class="menu-item-desc">Crema cocida con limoncello y coulis de frambuesa fresca.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano">
             <span class="menu-item-icon">🍫</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -283,9 +438,12 @@
                 <span class="menu-item-price">$14</span>
               </div>
               <p class="menu-item-desc">Coulant de chocolate 70% con centro líquido y helado de vainilla de Madagascar.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="vegetariano sin-gluten">
             <span class="menu-item-icon">🍨</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -293,6 +451,10 @@
                 <span class="menu-item-price">$9</span>
               </div>
               <p class="menu-item-desc">Tres bolas de gelato artesanal a elegir: pistacho, stracciatella o limón.</p>
+              <div class="item-tags">
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
         </div>
@@ -301,7 +463,7 @@
       <!-- VINOS -->
       <div class="menu-panel" id="tab-vinos">
         <div class="menu-grid">
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="sin-gluten vegetariano">
             <span class="menu-item-icon">🍷</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -309,9 +471,13 @@
                 <span class="menu-item-price">$85</span>
               </div>
               <p class="menu-item-desc">Nebbiolo de Piamonte. Taninos sedosos, notas de cereza, tabaco y cuero.</p>
+              <div class="item-tags">
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+                <span class="item-tag vegetariano">🌿 Vegetariano</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="sin-gluten vegetariano">
             <span class="menu-item-icon">🥂</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -319,9 +485,12 @@
                 <span class="menu-item-price">$60</span>
               </div>
               <p class="menu-item-desc">Espumante italiano método clásico. Fresco y elegante, ideal para celebrar.</p>
+              <div class="item-tags">
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="chef sin-gluten vegetariano">
             <span class="menu-item-icon">🍾</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -329,9 +498,13 @@
                 <span class="menu-item-price">$120</span>
               </div>
               <p class="menu-item-desc">El rey de los vinos toscanos. Sangiovese puro, 5 años de crianza. Espectacular.</p>
+              <div class="item-tags">
+                <span class="item-tag chef">👨‍🍳 Chef</span>
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item tilt-card" data-tags="sin-gluten vegetariano">
             <span class="menu-item-icon">🫗</span>
             <div class="menu-item-body">
               <div class="menu-item-header">
@@ -339,6 +512,9 @@
                 <span class="menu-item-price">$42</span>
               </div>
               <p class="menu-item-desc">Blanco del Alto Adigio. Aromas florales, fresco y mineral. Perfecto con pescados.</p>
+              <div class="item-tags">
+                <span class="item-tag sin-gluten">✓ Sin gluten</span>
+              </div>
             </div>
           </div>
         </div>
@@ -358,25 +534,75 @@
         <div class="ornament-line right"></div>
       </div>
       <div class="gallery-grid reveal">
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="0">
           <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80&auto=format" alt="Interior del restaurante" loading="lazy"/>
           <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="1">
           <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80&auto=format" alt="Pasta artesanal" loading="lazy"/>
           <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="2">
           <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80&auto=format" alt="Pizza napolitana" loading="lazy"/>
           <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="3">
           <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80&auto=format" alt="Equipo" loading="lazy"/>
           <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="4">
           <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80&auto=format" alt="Postre" loading="lazy"/>
           <div class="gallery-overlay"><span class="gallery-overlay-icon">✦</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">‹</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Imagen siguiente">›</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lightboxImg"/>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
+  </div>
+
+  <!-- ── EVENTOS ESPECIALES ── -->
+  <section class="section eventos-section" id="eventos">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Momentos únicos</p>
+      <h2 class="section-title reveal">Eventos Especiales</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="eventos-grid">
+        <div class="evento-card reveal tilt-card">
+          <div class="evento-icon">💍</div>
+          <h3>Propuestas &amp; Aniversarios</h3>
+          <p>Decoración especial, menú personalizado y una botella de Franciacorta de cortesía. Hacemos de tu momento más importante, uno inolvidable.</p>
+          <a href="#reservas" class="evento-btn">Consultar disponibilidad</a>
+        </div>
+        <div class="evento-card reveal tilt-card">
+          <div class="evento-icon">🥂</div>
+          <h3>Cenas Privadas</h3>
+          <p>Reserva el salón privado para grupos de 10 a 30 personas. Menú degustación exclusivo, sommelier personal y atención dedicada.</p>
+          <a href="#reservas" class="evento-btn">Consultar disponibilidad</a>
+        </div>
+        <div class="evento-card reveal tilt-card">
+          <div class="evento-icon">🎂</div>
+          <h3>Celebraciones &amp; Cumpleaños</h3>
+          <p>Sorprende a quien más quieres con una experiencia gastronómica a medida. Pastel personalizado, decoración y fotografía incluida.</p>
+          <a href="#reservas" class="evento-btn">Consultar disponibilidad</a>
+        </div>
+        <div class="evento-card reveal tilt-card">
+          <div class="evento-icon">💼</div>
+          <h3>Eventos Corporativos</h3>
+          <p>Almuerzos de negocios, team building gastronómico y presentaciones empresariales en el ambiente más exclusivo de la ciudad.</p>
+          <a href="#reservas" class="evento-btn">Consultar disponibilidad</a>
         </div>
       </div>
     </div>
@@ -392,21 +618,117 @@
         <div class="ornament-diamond"></div>
         <div class="ornament-line right"></div>
       </div>
-      <div class="testimonios-grid">
-        <div class="testimonio-card reveal">
-          <div class="testimonio-stars">★★★★★</div>
-          <p class="testimonio-text">La pasta más increíble que he probado fuera de Italia. El ambiente es íntimo y romántico. Definitivamente el mejor restaurante de la ciudad.</p>
-          <div class="testimonio-author"><strong>Valentina Moretti</strong> Cliente frecuente · Ciudad de México</div>
+      <div class="carousel-wrap reveal">
+        <div class="testimonios-carousel" id="testimoniosCarousel">
+          <div class="testimonio-slide">
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">La pasta más increíble que he probado fuera de Italia. El ambiente es íntimo y romántico. Definitivamente el mejor restaurante de la ciudad.</p>
+              <div class="testimonio-author"><strong>Valentina Moretti</strong> Cliente frecuente · Ciudad de México</div>
+            </div>
+          </div>
+          <div class="testimonio-slide">
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">Celebramos nuestro aniversario aquí y fue perfecto. El servicio impecable, el vino excepcional y la Bistecca Fiorentina, simplemente perfecta.</p>
+              <div class="testimonio-author"><strong>Carlos &amp; Andrea López</strong> Aniversario · Guadalajara</div>
+            </div>
+          </div>
+          <div class="testimonio-slide">
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">El tiramisú de la casa es un pecado de los buenos. Vine por negocios y terminé reservando mesa para el fin de semana con mi familia entera.</p>
+              <div class="testimonio-author"><strong>Roberto Fernández</strong> Viajero de negocios · Monterrey</div>
+            </div>
+          </div>
+          <div class="testimonio-slide">
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">Una velada perfecta de principio a fin. El Chef Marco salió a saludar personalmente y recomendó el Brunello. Una atención que no se olvida.</p>
+              <div class="testimonio-author"><strong>Isabella Ruiz</strong> Primera visita · Ciudad de Guatemala</div>
+            </div>
+          </div>
+          <div class="testimonio-slide">
+            <div class="testimonio-card">
+              <div class="testimonio-stars">★★★★★</div>
+              <p class="testimonio-text">La Bistecca Fiorentina es un espectáculo. 1.2 kilos de perfección. Vengo cada vez que puedo y siempre supera mis expectativas.</p>
+              <div class="testimonio-author"><strong>Diego Castellanos</strong> Cliente frecuente · Antigua Guatemala</div>
+            </div>
+          </div>
         </div>
-        <div class="testimonio-card reveal">
-          <div class="testimonio-stars">★★★★★</div>
-          <p class="testimonio-text">Celebramos nuestro aniversario aquí y fue perfecto. El servicio impecable, el vino excepcional y la Bistecca Fiorentina, simplemente perfecta.</p>
-          <div class="testimonio-author"><strong>Carlos &amp; Andrea López</strong> Aniversario · Guadalajara</div>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="carouselPrev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn" id="carouselNext" aria-label="Siguiente">›</button>
         </div>
-        <div class="testimonio-card reveal">
-          <div class="testimonio-stars">★★★★★</div>
-          <p class="testimonio-text">El tiramisú de la casa es un pecado de los buenos. Vine por negocios y terminé reservando mesa para el fin de semana con mi familia entera.</p>
-          <div class="testimonio-author"><strong>Roberto Fernández</strong> Viajero de negocios · Monterrey</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section faq-section" id="faq">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Preguntas frecuentes</p>
+      <h2 class="section-title reveal">FAQ</h2>
+      <div class="ornament reveal">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Se requiere reservación?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Altamente recomendable, especialmente de jueves a domingo. Puedes reservar en línea, por teléfono o por WhatsApp. Aceptamos walk-ins sujeto a disponibilidad.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Tienen estacionamiento?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, contamos con valet parking desde las 18:00 hrs sin costo adicional. También hay estacionamiento público disponible a media cuadra.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Tienen opciones para dietas especiales?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutamente. Contamos con opciones vegetarianas y sin gluten marcadas en el menú. Puedes notificarnos alergias o restricciones al reservar y adaptamos los platos con gusto.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Cuál es el dress code?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Elegante casual. No permitimos bermudas, sandalias de playa ni ropa deportiva. Para eventos privados se recomienda formal.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Aceptan grupos grandes?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, contamos con salón privado para grupos de 10 a 30 personas. Para grupos de más de 8, pedimos contactarnos directamente para coordinar el menú y la logística.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Se puede llevar pastel externo?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No aceptamos pasteles externos, pero nuestro chef de repostería puede preparar uno personalizado con 48 horas de anticipación. Consulta opciones al reservar.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -424,57 +746,59 @@
       </div>
       <div class="reservas-form reveal">
         <div id="formContent">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" placeholder="Tu nombre" required/>
+          <form id="reservaForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name"/>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+502 0000-0000" autocomplete="tel"/>
+              </div>
+              <div class="form-group">
+                <label for="personas">Número de personas</label>
+                <select id="personas" name="personas">
+                  <option>1 persona</option>
+                  <option selected>2 personas</option>
+                  <option>3 personas</option>
+                  <option>4 personas</option>
+                  <option>5-6 personas</option>
+                  <option>7 o más personas</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" name="fecha" required/>
+              </div>
+              <div class="form-group">
+                <label for="hora">Hora preferida</label>
+                <select id="hora" name="hora">
+                  <option>13:00 — Almuerzo</option>
+                  <option>14:00 — Almuerzo</option>
+                  <option>19:00 — Cena</option>
+                  <option>20:00 — Cena</option>
+                  <option selected>20:30 — Cena</option>
+                  <option>21:00 — Cena</option>
+                  <option>21:30 — Cena</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" placeholder="tu@email.com" required/>
+              <label for="notas">Peticiones especiales</label>
+              <textarea id="notas" name="notas" placeholder="Alergias, ocasión especial, preferencias de mesa…"></textarea>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" placeholder="+502 0000-0000"/>
-            </div>
-            <div class="form-group">
-              <label for="personas">Número de personas</label>
-              <select id="personas">
-                <option>1 persona</option>
-                <option selected>2 personas</option>
-                <option>3 personas</option>
-                <option>4 personas</option>
-                <option>5-6 personas</option>
-                <option>7 o más personas</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fecha">Fecha</label>
-              <input type="date" id="fecha"/>
-            </div>
-            <div class="form-group">
-              <label for="hora">Hora preferida</label>
-              <select id="hora">
-                <option>13:00 — Almuerzo</option>
-                <option>14:00 — Almuerzo</option>
-                <option>19:00 — Cena</option>
-                <option>20:00 — Cena</option>
-                <option selected>20:30 — Cena</option>
-                <option>21:00 — Cena</option>
-                <option>21:30 — Cena</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="notas">Peticiones especiales</label>
-            <textarea id="notas" placeholder="Alergias, ocasión especial, preferencias de mesa…"></textarea>
-          </div>
-          <div id="reservaError"></div>
-          <button type="button" class="form-submit" id="btnReserva">Confirmar reservación</button>
+            <div id="reservaError" role="alert"></div>
+            <button type="submit" class="form-submit">Confirmar reservación</button>
+          </form>
         </div>
         <div class="form-success" id="formSuccess">
           <div class="check">✦</div>
@@ -485,10 +809,26 @@
     </div>
   </section>
 
+  <!-- ── MAPA ── -->
+  <section class="map-section" id="mapa">
+    <div class="map-header">
+      <p class="section-eyebrow reveal">Encuéntranos</p>
+      <h2 class="section-title reveal">¿Cómo llegar?</h2>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15444.455043577847!2d-90.52737!3d14.60445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a184d10a7a01%3A0x3acc6e14de7deb4e!2sZona%20Rosa%2C%20Ciudad%20de%20Guatemala!5e0!3m2!1ses!2sgt!4v1716000000000!5m2!1ses!2sgt"
+        width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de La Notte — Zona Rosa, Ciudad de Guatemala">
+      </iframe>
+    </div>
+  </section>
+
   <!-- ── INFORMACIÓN / CONTACTO ── -->
   <section class="section info-section" id="contacto">
     <div class="section-inner">
-      <p class="section-eyebrow reveal">Encuéntranos</p>
+      <p class="section-eyebrow reveal">Estamos aquí para ti</p>
       <h2 class="section-title reveal">Información</h2>
       <div class="ornament reveal">
         <div class="ornament-line"></div>
@@ -512,7 +852,7 @@
           <p>
             <a href="tel:+50222000000">+502 2200-0000</a><br/>
             <a href="mailto:reservas@lanotte.com">reservas@lanotte.com</a><br/>
-            <a href="#">Instagram · @RestauranteLaNotte</a>
+            <a href="https://instagram.com/RestauranteLaNotte" target="_blank" rel="noopener">Instagram · @RestauranteLaNotte</a>
           </p>
         </div>
       </div>
@@ -524,8 +864,10 @@
     <div class="footer-logo">La Notte</div>
     <ul class="footer-links">
       <li><a href="#sobre-nosotros">Nosotros</a></li>
+      <li><a href="#chef">Chef</a></li>
       <li><a href="#menu">Menú</a></li>
       <li><a href="#galeria">Galería</a></li>
+      <li><a href="#eventos">Eventos</a></li>
       <li><a href="#reservas">Reservas</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -533,8 +875,14 @@
     <div class="developer-badge">Desarrollado por <span>Luis Gustavo Ramírez</span> · Portafolio Freelance</div>
   </footer>
 
-  <!-- JavaScript propio -->
-  <script src="js/main.js"></script>
+  <!-- ── FLOTANTES ── -->
+  <a href="https://wa.me/50222000000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
